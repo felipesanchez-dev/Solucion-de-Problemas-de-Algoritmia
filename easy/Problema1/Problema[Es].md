@@ -1,96 +1,105 @@
-# Compara los trillizos
-### Nivel de dificultal: *Facil*
-#### [**Problema**](https://www.hackerrank.com/challenges/compare-the-triplets/problem)
+# **Comparación de Tripletas**
+
+## Nivel de dificultad: 🟢 Fácil
+
+### [📌 Enunciado del Problema](https://www.hackerrank.com/challenges/compare-the-triplets/problem)
 ---
 
-Alice y Bob crearon cada uno un problema para HackerRank. Un revisor califica los dos desafíos, otorgando puntos en una escala del 1 al 100 para tres categorías: claridad del problema, originalidad y dificultad.
-La calificación para el desafío de **Alicia** es el triplete *a = (a[0], a[1], a[2])*, y la calificación para el desafío de **Bob** es el triplete *b = (b[0], b[1], b[2])*. <br>
+Alice y Bob crearon cada uno un problema para HackerRank. Un revisor califica los dos desafíos, otorgando puntos en una escala del 1 al 100 para tres categorías: **claridad del problema, originalidad y dificultad**.
 
-La tarea consiste en calcular sus puntos de comparación comparando cada categoría:
+La calificación para el desafío de **Alicia** es el triplete:
+> `a = (a[0], a[1], a[2])`
 
-* Si a[i] > b[i], entonces Alicia recibe 1 punto.
-* Si a[i] < b[i], entonces Bob recibe 1 punto.
-* Si a[i] = b[i], entonces ninguna de las dos personas recibe un punto.
+La calificación para el desafío de **Bob** es el triplete:
+> `b = (b[0], b[1], b[2])`
 
-#### Ejemplo
+### 📊 Criterios de comparación:
+- **Si** `a[i] > b[i]` → **Alice gana 1 punto**
+- **Si** `a[i] < b[i]` → **Bob gana 1 punto**
+- **Si** `a[i] = b[i]` → **Nadie gana puntos**
 
-a = [1, 2, 3] <br>
-b = [3, 2, 1] <br>
+---
 
-Para los elementos *0*, a Bob se le otorga un punto porque 
-**a[0]** < **b[0]**.
-Para los elementos iguales **a[1]** y **b[1]**, no se obtienen puntos.
-Finalmente, para los elementos *2*, **a[2]** > **b[2]**, por lo que Alicia recibe un punto.
+## 📌 Ejemplo
 
-La matriz de retorno es **[1, 1]** con la puntuación de Alice primero y la de Bob en segundo lugar.
-
-#### Descripción de la función
-
-Complete la función compareTripletes con los siguientes parámetros:
-
-**int a[3]:** Índice de desafío de Alicia <br>
-**int b[3]:** Índice de desafío de Bob
-
-#### Devuelve
-
-**int[2]:** el primer elemento es la puntuación de Alice y el segundo es la puntuación de Bob
-
-#### Formato de entrada
-
-La primera línea contiene 3 enteros separados por espacios, **a[0]**, **a[1]** y **a[2]**, los valores respectivos en el triplete *a*.
-
-La segunda línea contiene 3 enteros separados por espacios, **b[0]**, **b[1]** y **b[2]**, los valores respectivos en triplete *b*.
-
-#### Restricciones
-* 1 ≤ a[i] ≤ 100
-* 1 ≤ b[i] ≤ 100
-
-#### Entrada de muestra 0
-```bash
-    5 6 7
-
-    3 6 10
+**Entrada:**  
+```plaintext
+1 2 3
+3 2 1
 ```
 
-#### Salida de muestra 0
+**Proceso:**
+- `a[0] (1) < b[0] (3) →` Bob gana 1 punto
+- `a[1] (2) = b[1] (2) →` Ninguno gana puntos
+- `a[2] (3) > b[2] (1) →` Alice gana 1 punto
 
-```bash
-    1 1
+**Salida:**  
+```plaintext
+1 1
 ```
 
-#### Explicación 0
+---
 
-En este ejemplo:
+## ✍️ Descripción de la función
 
-• a = (a[0], a[1], a[2]) = (5, 6, 7)
+Completa la función `compareTriplets` con los siguientes parámetros:
 
-• b = (b[0], b[1], b[2]) = (3, 6, 10)
+🔹 **Entrada:**
+- `int a[3]` → Lista con los puntajes de Alice
+- `int b[3]` → Lista con los puntajes de Bob
 
-Ahora, comparemos cada puntuación individual:
+🔹 **Salida:**
+- `int[2]` → Lista donde el primer elemento es la puntuación de Alice y el segundo la de Bob
 
-• a[0] > b[0], por lo que Alicia recibe el punto.1
+---
 
-• a[1] = b[1], por lo que nadie recibe un punto.
+## 📌 Formato de entrada
 
-• a[2] < b[2], por lo que Bob recibe el punto.1
+- La **primera línea** contiene 3 enteros separados por espacios → `a[0] a[1] a[2]`
+- La **segunda línea** contiene 3 enteros separados por espacios → `b[0] b[1] b[2]`
 
-La puntuación de comparación de Alice es , y la puntuación de comparación de Bob es . Por lo tanto, devolvemos la matriz 11[1, 1].
-#### Entrada de muestra 1
-```bash
-    17 28 30
+🔹 **Restricciones:**
+- `1 ≤ a[i] ≤ 100`
+- `1 ≤ b[i] ≤ 100`
 
-    99 16 8
+---
 
+## 📌 Casos de prueba
+
+### ✅ **Ejemplo 1**
+🔹 **Entrada:**
+```plaintext
+5 6 7
+3 6 10
+```
+🔹 **Proceso:**
+- `a[0] (5) > b[0] (3) →` Alice gana 1 punto
+- `a[1] (6) = b[1] (6) →` Ninguno gana puntos
+- `a[2] (7) < b[2] (10) →` Bob gana 1 punto
+
+🔹 **Salida:**
+```plaintext
+1 1
 ```
 
-#### Salida de muestra 1
-```bash
-    2 1
+---
+
+### ✅ **Ejemplo 2**
+🔹 **Entrada:**
+```plaintext
+17 28 30
+99 16 8
+```
+🔹 **Proceso:**
+- `a[0] (17) < b[0] (99) →` Bob gana 1 punto
+- `a[1] (28) > b[1] (16) →` Alice gana 1 punto
+- `a[2] (30) > b[2] (8) →` Alice gana 1 punto
+
+🔹 **Salida:**
+```plaintext
+2 1
 ```
 
-#### Explicación 1
-Comparando el 0th Elementos 17 < 99 así que Bob recibe un punto.
+---
 
-Comparando el 1st y 2nd Elementos 28 > 16 y 30 > 8 por lo que Alicia recibe dos puntos.
-
-La matriz de retorno es [2,1].
+📢 **Nota:** La salida siempre muestra `[Puntaje_Alice, Puntaje_Bob]`.
