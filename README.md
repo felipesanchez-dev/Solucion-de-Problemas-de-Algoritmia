@@ -28,7 +28,7 @@ Este repositorio servirá como referencia tanto para quienes buscan mejorar su h
 
 Si te gusta este contenido, te invito a explorar más de mis proyectos en GitHub:  
 
-🌟[** Reto: 15 Proyectos con APIs 🚀**](https://github.com/felipesanchez-dev/15-Projects-APIs-Challenge) – En este repositorio, encontraras  aplicaciones multiplataforma utilizando React Native..  
+🌟[**Reto: 15 Proyectos con APIs 🚀**](https://github.com/felipesanchez-dev/15-Projects-APIs-Challenge) – En este repositorio, encontraras  aplicaciones multiplataforma utilizando React Native..  
 🌿 [**Fundación San Dimas**](https://www.fundacionsandimas.org) – Un sitio web para la conservación ambiental con fotos y eventos de Ibagué-Tolima Colombia.  
 
 ---
