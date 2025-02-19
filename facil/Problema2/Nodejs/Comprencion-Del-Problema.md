@@ -132,3 +132,72 @@ function main() {
     ws.end();
 }
 ```
+**🔍 ¿Qué hace?**
+
+1. **Salida:** Se crea un stream de escritura `(ws)` para enviar la salida al archivo indicado por la variable de entorno `OUTPUT_PATH` *(típico en plataformas competitivas)*.
+
+2. Lectura del tamaño del array: Se lee la primera línea (guardada en `arCount`), aunque no se utiliza para la suma.
+
+3. Procesamiento del array:
+
+* Se lee la segunda línea.
+* Se eliminan los espacios en blanco al final con `replace(/\s+$/g, '')`.
+
+* Se separa la línea en un `array de strings usando` `split(' ')`.
+
+* Se convierte cada string a un número entero con `map(arTemp => parseInt(arTemp, 10))`.
+
+4. Cálculo de la suma: Se llama a `simpleArraySum(ar)` para obtener el resultado.
+
+5. Escritura del resultado: Se escribe el resultado en el stream y se cierra el stream con `ws.end()`.
+
+<br>
+
+**🚀 Mejora para ejecución local:**
+
+Si deseas probar el código en tu consola local sin depender de `stdin` y `fs`, podrías modificar `main()` de esta forma:
+```javascript
+function main() {
+    const ar = [1, 2, 3, 4, 10, 11]; // Entrada simulada
+    console.log(simpleArraySum(ar)); // Debería imprimir: 31
+}
+
+main();
+
+```
+
+#  Final
+
+
+* **Lectura de Entrada:**
+
+* Se usan eventos de Node.js para leer datos desde stdin y      almacenarlos en `inputString`.
+
+* La función `readLine()` facilita la lectura línea por línea.
+
+<br>
+
+* **Procesamiento de Datos:**
+
+* Se transforma la entrada de texto en un array de números utilizando métodos como `trim()`, `split(' ')` y `map()`.
+
+<br>
+
+* **Cálculo de la Suma:**
+
+* La función `simpleArraySum(ar)` usa `reduce()` para sumar los elementos de manera concisa y eficiente.
+
+* Existe una versión alternativa usando un `bucle for`, la cual es más tradicional pero menos idiomática.
+
+<br>
+
+* **Salida del Resultado:**
+
+En plataformas competitivas, se usa `fs.createWriteStream` para escribir el resultado en un archivo.
+
+Para pruebas locales, se utiliza `console.log()`.
+
+
+🎉 Conclusión:
+
+Este enfoque modular y el uso de métodos integrados hacen que el código sea claro, eficiente y fácil de mantener. Además, tener versiones tanto optimizadas como tradicionales te permite comparar y entender cómo cada técnica afecta la legibilidad y el rendimiento del código. ¡Espero que esta explicación te haya resultado útil y te anime a seguir profundizando en la programación en JavaScript! 🚀💻
