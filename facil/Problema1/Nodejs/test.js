@@ -7,7 +7,7 @@
     2. `test.js`: Adaptado para ejecutarse localmente. Para probar la solución, 
         basta con ejecutar el comando "node test.js" en la terminal.
 */
-'use strict';
+'use strict'; 
 
 const readline = require('readline');
 
